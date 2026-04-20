@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pet gallery of Vanessa Fontalvo — meet Luna, Mango and Perla." />
+  <meta name="keywords" content="pets, cats, dogs, rabbits, pets gallery, Luna, Mango, Perla" />
+  <meta name="author" content="Vanessa Fontalvo" />
+  <title>My Pets — Vanessa Fontalvo</title>
+  <!-- Vinculación de la misma hoja de estilos compartida -->
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="page-mascotas">
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo con enlace de vuelta al portafolio -->
+      <div class="logo">
+        <a href="index.html" class="logo-link" aria-label="Volver al portafolio">
+          <span class="logo-initial">VF</span>
+          <span class="logo-name">Vanessa Fontalvo</span>
+        </a>
+      </div>
+
+      <!-- Navegación de la página de mascotas -->
+      <nav class="main-nav" aria-label="Navegación">
+        <ul>
+          <!-- Enlace de regreso al portafolio principal -->
+          <li><a href="index.html" class="nav-back">
+              <i class='bx bx-arrow-back'></i>
+              Portfolio</a></li>
+          <li><a href="#galeria">Gallery</a></li>
+          <li><a href="#curiosidades">Fun Facts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO DE MASCOTAS ===================== -->
+  <section class="pets-hero">
+    <div class="pets-hero-content">
+      <p class="hero-label">A special section </p>
+      <h1 class="hero-title pets-hero-title">
+        My <em>Pets</em> 🐾
+      </h1>
+      <p class="hero-sub">
+        Three companions that fill my life with joy, chaos and unconditional love.
+      </p>
+    </div>
+    <!-- Decoración de huellas -->
+    <div class="paw-deco" aria-hidden="true">
+      <span>🐾</span><span>🐾</span><span>🐾</span>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ===================== GALERÍA DE MASCOTAS ===================== -->
+    <section id="galeria" class="section section-gallery">
+      <div class="section-inner">
+        <span class="section-tag">01 — The furry family</span>
+        <h2 class="section-title">Meet my companions.</h2>
+
+        <!-- Contenedor de la galería -->
+        <div class="pets-grid">
+
+          <!-- ---- Mascota 1: Luna ---- -->
+          <article class="pet-card">
+            <!-- Imagen de la mascota (usando placeholder de Picsum con temática animal) -->
+            <div class="pet-image-wrap">
+              <img src="img/tabby.jpg" alt="Luna, a tabby cat with orange fur resting on a soft pillow" width="600"
+                height="450" loading="lazy" />
+              <span class="pet-badge">Cat</span>
+            </div>
+            <!-- Descripción de la mascota -->
+            <div class="pet-info">
+              <h3 class="pet-name">Luna 🌙</h3>
+              <p class="pet-age"> 2 years · Female</p>
+              <p class="pet-desc">
+                Luna is a tabby cat with amber eyes who came to our home on a rainy December day.
+                She is the undisputed queen of the household: demands affection on her own terms and has
+                a special talent for appearing exactly when you're working on something important.
+                Her favorite hobby is watching birds from the window and judging everything I do.
+              </p>
+              <!-- Etiquetas de personalidad -->
+              <ul class="pet-tags" aria-label="Personalidad">
+                <li>Independendent</li>
+                <li>Curious</li>
+                <li>Moody</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ---- Mascota 2: Mango ---- -->
+          <article class="pet-card">
+            <div class="pet-image-wrap">
+              <img src="img/golden.jpeg"
+                alt="Mango, is a golden retriever with infinite energy and unconditional love to give" width="600"
+                height="450" loading="lazy" />
+              <span class="pet-badge pet-badge--dog">Dog</span>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-name">Mango 🥭</h3>
+              <p class="pet-age">6 months · Male</p>
+              <p class="pet-desc">
+                Mango is a golden retriever with infinite energy and unconditional love to give.
+                He arrived as a puppy and since then has turned every corner of the house into his personal park.
+                He is the most social in the family: makes friends in seconds and never rejects a walk,
+                a ball or a nap next to you on the sofa.
+              </p>
+              <ul class="pet-tags" aria-label="Personalidad">
+                <li>Playful</li>
+                <li>Devoted</li>
+                <li>Mischievous</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ---- Mascota 3: Perla ---- -->
+          <article class="pet-card">
+            <div class="pet-image-wrap">
+              <img src="img/bunny.jpg" alt="Perla, a white rabbit sitting on green grass" width="600" height="450"
+                loading="lazy" />
+              <span class="pet-badge pet-badge--rabbit">Rabbit</span>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-name">Perla 🤍</h3>
+              <p class="pet-age">1 year · Female</p>
+              <p class="pet-desc">
+                Perla is the cutest surprise my niece brought me for my birthday. She is a small
+                white rabbit and an enormous personality. She loves to explore,
+                jump on the cushions and convince everyone that she deserves more carrots.
+                She is the quietest in the family, but also the most observant.
+              </p>
+              <ul class="pet-tags" aria-label="Personalidad">
+                <li>Calm</li>
+                <li>Explorer</li>
+                <li>Gluttonous</li>
+              </ul>
+            </div>
+          </article>
+
+        </div><!-- /pets-grid -->
+      </div>
+    </section>
+
+    <!-- ===================== SECCIÓN: CURIOSIDADES ===================== -->
+    <section id="curiosidades" class="section section-curiosidades">
+      <div class="section-inner">
+        <span class="section-tag">02 — Fun Facts</span>
+        <h2 class="section-title">What i learned from them.</h2>
+
+        <!-- Lista de curiosidades / aprendizajes -->
+        <ul class="curiosidades-list">
+          <li>
+            <span class="curio-icon">🐱</span>
+            <p>Cats sleep between 12 and 16 hours a day. Luna is prove of this.</p>
+          </li>
+          <li>
+            <span class="curio-icon">🐶</span>
+            <p>Golden retrievers were originally bred to retrieve things without damaging it, hence their
+              "soft" mouth.</p>
+          </li>
+          <li>
+            <span class="curio-icon">🐇</span>
+            <p>Rabbits are crepuscular animals: they are most active at dawn and dusk.</p>
+          </li>
+          <li>
+            <span class="curio-icon">❤️</span>
+            <p>Having pets reduces stress and improves cardiovascular health. My cardiologist is proud.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA CON ENLACE DE RETORNO ===================== -->
+  <footer class="site-footer pets-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">🐾 Luna, Mango & Perla aprove this message.</p>
+      <!-- Enlace de retorno al portafolio principal -->
+      <a href="index.html" class="btn-primary btn-back"> <i class='bx bx-arrow-back'></i>
+        View portfolio</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

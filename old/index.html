@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Vanessa Fontalvo — Frontend Web Developer">
+  <meta name="author" content="Vanessa Fontalvo">
+  <title>Vanessa Fontalvo — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===================== ENCABEZADO Y NAVEGACIÓN ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-initial">VF</span>
+        <span class="logo-name">vanessa-fontalvo.dev</span>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#sobre-mi">About me</a></li>
+          <li><a href="#proyectos">Projects</a></li>
+          <li><a href="#contacto">Contact</a></li>
+          <li><a href="mascotas.html" class="nav-highlight">🐾 My Pets</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO / PRESENTACIÓN ===================== -->
+  <section class="hero-wrapper">
+    <div id="hero-particles" aria-hidden="true"></div>
+    <div class="hero">
+      <div class="hero-content">
+        <p class="hero-label">Welcome to my portfolio</p>
+        <h1 class="hero-title">
+          Design &amp;<br>
+          <em>Development</em><br>
+          with purpose.
+        </h1>
+        <p class="hero-sub">I build digital experiences that connect people with ideas.</p>
+        <a href="#proyectos" class="btn-primary">View my projects ↓</a>
+      </div>
+      <div class="hero-deco" aria-hidden="true">
+        <div class="deco-circle"></div>
+        <div class="deco-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ===================== SECCIÓN: SOBRE MÍ ===================== -->
+    <section id="sobre-mi" class="section section-about">
+      <div class="section-inner">
+        <span class="section-tag">01 — About me</span>
+        <h2 class="section-title">Hello, I'm Vanessa.</h2>
+        <p class="about-text">
+          I am a frontend web developer passionate about the intersection of design and technology.
+          I specialize in creating accessible, fast and visually memorable interfaces using
+          HTML5, CSS and JavaScript. I am a systems &amp; computing engineer recent graduate and I dedicate
+          my free time to creative projects, my family and, of course, to my adorable pets.
+        </p>
+        <ul class="skills-list" aria-label="Habilidades técnicas">
+          <li>HTML5 &amp; Semantic Markup</li>
+          <li>CSS3 &amp; Responsive Design</li>
+          <li>JavaScript ES6+</li>
+          <li>Web Accessibility</li>
+          <li>Git &amp; Version Control</li>
+        </ul>
+      </div>
+      <div class="about-image-wrap" aria-hidden="true">
+        <div class="about-image-placeholder">
+          <span>VF</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECCIÓN: PROYECTOS ===================== -->
+    <section id="proyectos" class="section section-projects">
+      <div class="section-inner">
+        <span class="section-tag">02 — Projects</span>
+        <h2 class="section-title">What I have built.</h2>
+
+        <ul class="projects-list">
+
+          <!-- Proyecto 01 -->
+          <li class="project-card">
+            <!-- Números de línea -->
+            <div class="project-number">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+            <!-- Cara frontal: vista "código" -->
+            <div class="project-flip">
+              <div class="project-front">
+                <div class="project-code-block">
+                  <span class="code-tag-open">&lt;</span><span class="code-tag-name">h3</span><span class="code-tag-open">&gt;</span><br>
+                  &nbsp;&nbsp;<span class="code-title"><span class="code-underline">Online Bookstore</span></span><br>
+                  <span class="code-tag-close">&lt;/</span><span class="code-tag-name">h3</span><span class="code-tag-close">&gt;</span>
+                </div>
+              </div>
+              <!-- Cara trasera: info del proyecto -->
+              <div class="project-back">
+                <div class="project-info">
+                  <h3><a href="#proyectos" class="project-link">Online Bookstore</a></h3>
+                  <p>E-commerce platform with a searchable catalog and shopping cart.</p>
+                  <span class="project-tech">HTML · CSS · JavaScript</span>
+                </div>
+                <a href="#proyectos" class="project-back-cta">View project →</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Proyecto 02 -->
+          <li class="project-card">
+            <div class="project-number">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+            <div class="project-flip">
+              <div class="project-front">
+                <div class="project-code-block">
+                  <span class="code-tag-open">&lt;</span><span class="code-tag-name">h3</span><span class="code-tag-open">&gt;</span><br>
+                  &nbsp;&nbsp;<span class="code-title"><span class="code-underline">Weather Dashboard</span></span><br>
+                  <span class="code-tag-close">&lt;/</span><span class="code-tag-name">h3</span><span class="code-tag-close">&gt;</span>
+                </div>
+              </div>
+              <div class="project-back">
+                <div class="project-info">
+                  <h3><a href="#proyectos" class="project-link">Weather Dashboard</a></h3>
+                  <p>Application that displays real-time weather forecast using a public API.</p>
+                  <span class="project-tech">JavaScript · API REST · CSS Grid</span>
+                </div>
+                <a href="#proyectos" class="project-back-cta">View project →</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Proyecto 03 -->
+          <li class="project-card">
+            <div class="project-number">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+            <div class="project-flip">
+              <div class="project-front">
+                <div class="project-code-block">
+                  <span class="code-tag-open">&lt;</span><span class="code-tag-name">h3</span><span class="code-tag-open">&gt;</span><br>
+                  &nbsp;&nbsp;<span class="code-title"><span class="code-underline">Personal Travel Blog</span></span><br>
+                  <span class="code-tag-close">&lt;/</span><span class="code-tag-name">h3</span><span class="code-tag-close">&gt;</span>
+                </div>
+              </div>
+              <div class="project-back">
+                <div class="project-info">
+                  <h3><a href="#proyectos" class="project-link">Personal Travel Blog</a></h3>
+                  <p>Static website with illustrated articles and photo gallery of my travels.</p>
+                  <span class="project-tech">HTML5 · CSS Flexbox · Figma</span>
+                </div>
+                <a href="#proyectos" class="project-back-cta">View project →</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Proyecto 04 -->
+          <li class="project-card">
+            <div class="project-number">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+            <div class="project-flip">
+              <div class="project-front">
+                <div class="project-code-block">
+                  <span class="code-tag-open">&lt;</span><span class="code-tag-name">h3</span><span class="code-tag-open">&gt;</span><br>
+                  &nbsp;&nbsp;<span class="code-title"><span class="code-underline">My Pets Page 🐾</span></span><br>
+                  <span class="code-tag-close">&lt;/</span><span class="code-tag-name">h3</span><span class="code-tag-close">&gt;</span>
+                </div>
+              </div>
+              <div class="project-back">
+                <div class="project-info">
+                  <h3><a href="mascotas.html" class="project-link">My Pets Page 🐾</a></h3>
+                  <p>Gallery dedicated to my adorable pets with descriptions and photos.</p>
+                  <span class="project-tech">HTML5 · CSS · Responsive Design</span>
+                </div>
+                <a href="mascotas.html" class="project-back-cta">View project →</a>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== SECCIÓN: CONTACTO ===================== -->
+    <section id="contacto" class="section section-contact">
+      <div class="section-inner">
+        <span class="section-tag">03 — Contact</span>
+        <h2 class="section-title">Let's talk.</h2>
+        <p class="contact-intro">
+          Do you have a project in mind or just want to say hello? Send me a message and I'll get back to you soon.
+        </p>
+        <form class="contact-form" action="#" method="post">
+
+          <div class="form-group">
+            <label for="nombre">Full Name</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Message</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Tell me about your project..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary btn-submit">Send Message →</button>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PARTÍCULAS ===================== -->
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@3.3.0/tsparticles.slim.bundle.min.js"></script>
+  <script>
+    (async () => {
+      const wrapper = document.querySelector(".hero-wrapper");
+      const wrapperH = wrapper.offsetHeight;
+
+      const particlesEl = document.getElementById("hero-particles");
+      particlesEl.style.height = wrapperH + "px";
+
+      await tsParticles.load({
+        id: "hero-particles",
+        options: {
+          fpsLimit: 120,
+          fullScreen: { enable: false },
+          interactivity: {
+            detectOn: "canvas",
+            events: {
+              onHover: { enable: true, mode: "repulse" },
+            },
+            modes: {
+              repulse: { distance: 120, duration: 0.4 },
+            },
+          },
+          particles: {
+            number: { value: 80, density: { enable: true, area: 800 } },
+            color: { value: ["#569CD6", "#4EC9B0", "#DCDCAA", "#CE9178"] },
+            shape: { type: "circle" },
+            opacity: { value: 0.35 },
+            size: { value: { min: 1, max: 3 }, random: true },
+            links: {
+              enable: true,
+              distance: 130,
+              color: "#569CD6",
+              opacity: 0.15,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 1.2,
+              direction: "none",
+              outModes: { default: "out" },
+            },
+          },
+          detectRetina: true,
+        },
+      });
+    })();
+  </script>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Vanessa Fontalvo. Made with ♥ and lots of coffee.</p>
+      <a href="mascotas.html" class="footer-link">🐾 Meet My Pets</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
