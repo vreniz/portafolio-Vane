@@ -11,6 +11,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -22,13 +24,14 @@
         <span class="logo-initial">VF</span>
         <span class="logo-name">vanessa-fontalvo.dev</span>
       </div>
-      <nav class="main-nav" aria-label="Navegación principal">
+      <nav class="main-nav" aria-label="main navigation">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#sobre-mi">About me</a></li>
-          <li><a href="#proyectos">Projects</a></li>
-          <li><a href="#contacto">Contact</a></li>
-          <li><a href="mascotas.html" class="nav-highlight">🐾 My Pets</a></li>
+          <li><a href="#home" class="nav-home"><ion-icon name="home-outline"></ion-icon> Home</a></li>
+          <li><a href="#sobre-mi" class="nav-about"><ion-icon name="person-outline"></ion-icon> About me</a></li>
+          <li><a href="#proyectos" class="nav-projects"><ion-icon name="code-slash-outline"></ion-icon> Projects</a>
+          </li>
+          <li><a href="#contacto" class="nav-contact"><ion-icon name="mail-outline"></ion-icon> Contact</a></li>
+          <li><a href="mascotas.html" class="nav-highlight"><ion-icon name="paw-outline"></ion-icon> My Pets</a></li>
         </ul>
       </nav>
     </div>
@@ -41,18 +44,96 @@
   <section class="hero-wrapper" id="home">
     <div class="hero">
       <div class="hero-content">
+        <p class="hero-code-deco"><span class="hero-kw">const</span> <span class="hero-var">developer</span> <span
+            class="hero-dim">=</span> <span class="hero-str">"Vanessa Fontalvo"</span><span class="hero-dim">;</span>
+        </p>
         <p class="hero-label">Welcome to my portfolio</p>
         <h1 class="hero-title">
           Design &amp;<br>
           <em>Development</em><br>
           with purpose.
         </h1>
-        <p class="hero-sub">I build digital experiences that connect people with ideas.</p>
-        <a href="#proyectos" class="btn-primary">View my projects ↓</a>
+        <p class="hero-sub">I build <span class="hero-sub-blue">digital experiences</span> that connect <span
+            class="hero-sub-lavender">people</span> with <span class="hero-sub-pink">ideas</span>.</p>
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn-primary">View my projects ↓</a>
+          <p class="hero-stats">
+            <span class="stat-num stat-purple">06</span> projects &nbsp;·&nbsp;
+            <span class="stat-num stat-green">04</span> months &nbsp;·&nbsp;
+            <span class="stat-num stat-pink">01</span> degree
+          </p>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+          <div class="scroll-line"></div>
+          <div class="scroll-mouse">
+            <div class="scroll-dot"></div>
+          </div>
+          <span class="scroll-label">scroll</span>
+        </div>
       </div>
       <div class="hero-deco" aria-hidden="true">
         <div class="deco-circle"></div>
         <div class="deco-line"></div>
+      </div>
+
+      <!-- Tarjeta GitHub + Status en vivo -->
+      <div class="hero-card">
+
+        <!-- Header estilo GitHub -->
+        <div class="hc-banner"></div>
+        <div class="hc-profile">
+          <div class="hc-avatar">VF</div>
+          <div class="hc-info">
+            <div class="hc-name">Vanessa Fontalvo</div>
+            <div class="hc-handle">vreniz · she/her</div>
+          </div>
+        </div>
+        <div class="hc-bio">Frontend Developer &amp; Systems Engineer. Building cool stuff with React &amp; CSS.</div>
+
+        <!-- Pills de skills -->
+        <div class="hc-pills">
+          <span class="hc-pill pill-blue">React</span>
+          <span class="hc-pill pill-pink">CSS3</span>
+          <span class="hc-pill pill-yellow">HTML5</span>
+          <span class="hc-pill pill-orange">JS ES6+</span>
+          <span class="hc-pill pill-lavender">Vite</span>
+          <span class="hc-pill pill-green">Git</span>
+        </div>
+
+        <div class="hc-divider"></div>
+
+        <!-- Reloj en vivo -->
+        <div class="hc-clock-wrap">
+          <div class="hc-clock" id="hero-clock">--:--:--</div>
+          <div class="hc-timezone">Barranquilla · UTC-5</div>
+        </div>
+
+        <div class="hc-divider"></div>
+
+        <!-- Status -->
+        <div class="hc-status">
+          <div class="hc-status-dot"></div>
+          <div>
+            <div class="hc-status-title">Available for work</div>
+            <div class="hc-status-sub">Open to freelance &amp; full-time</div>
+          </div>
+        </div>
+
+        <div class="hc-meta">
+          <div class="hc-meta-row">
+            <span class="hc-meta-key">Current focus</span>
+            <span class="hc-meta-val val-lavender">Frontend Dev</span>
+          </div>
+          <div class="hc-meta-row">
+            <span class="hc-meta-key">Location</span>
+            <span class="hc-meta-val val-blue">Barranquilla, CO</span>
+          </div>
+          <div class="hc-meta-row">
+            <span class="hc-meta-key">Response time</span>
+            <span class="hc-meta-val val-green">within 24h</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -77,7 +158,7 @@
             </p>
           </div>
         </div>
-        <ul class="skills-list" aria-label="Habilidades técnicas">
+        <ul class="skills-list" aria-label="technical skills">
           <li>HTML5 &amp; Semantic Markup</li>
           <li>CSS3 &amp; Responsive Design</li>
           <li>JavaScript ES6+</li>
@@ -313,47 +394,7 @@
 
   <!-- ===================== PARTÍCULAS ===================== -->
   <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@3.3.0/tsparticles.slim.bundle.min.js"></script>
-  <script>
-    (async () => {
-      await tsParticles.load({
-        id: "hero-particles",
-        options: {
-          fpsLimit: 120,
-          fullScreen: { enable: true, zIndex: -1 },
-          interactivity: {
-            detectOn: "canvas",
-            events: {
-              onHover: { enable: true, mode: "repulse" },
-            },
-            modes: {
-              repulse: { distance: 120, duration: 0.4 },
-            },
-          },
-          particles: {
-            number: { value: 120, density: { enable: true, area: 800 } },
-            color: { value: ["#7C6AF7", "#FF79C6", "#61DAFB", "#50FA7B", "#BD93F9", "#FF9AF5", "#FFB86C"] },
-            shape: { type: "circle" },
-            opacity: { value: 0.7, random: true },
-            size: { value: { min: 1.5, max: 4 }, random: true },
-            links: {
-              enable: true,
-              distance: 130,
-              color: "#BD93F9",
-              opacity: 0.25,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 1.8,
-              direction: "none",
-              outModes: { default: "out" },
-            },
-          },
-          detectRetina: true,
-        },
-      });
-    })();
-  </script>
+  <script src="particles.js"></script>
 
   <!-- ===================== PIE DE PÁGINA ===================== -->
   <footer class="site-footer">
@@ -365,29 +406,10 @@
 
   <!-- ===================== TYPED.JS — About Me ===================== -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script>
-    const typedTarget = document.getElementById('typed-about');
-    let typedStarted = false;
+  <script src="typed.js"></script>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !typedStarted) {
-          typedStarted = true;
-          new Typed('#typed-about', {
-            strings: [`<span class="t-blue">Welcome </span>\n\nI am a <span class="t-blue">frontend web developer</span> passionate about the intersection of <span class="t-pink">design and technology</span>.\n\nI specialize in creating <span class="t-yellow">accessible, fast and visually memorable</span> interfaces using <span class="t-orange">HTML5, CSS and JavaScript</span>.\n\nI am a <span class="t-green">systems &amp; computing engineer</span> recent graduate and I dedicate my free time to <span class="t-lavender">creative projects</span>, my family and, of course, to my <span class="t-pink">adorable pets</span>.`],
-            startDelay: 300,
-            typeSpeed: 18,
-            showCursor: true,
-            cursorChar: '•',
-            contentType: 'html',
-            loop: false,
-          });
-        }
-      });
-    }, { threshold: 0.25 });
-
-    observer.observe(typedTarget);
-  </script>
+  <!-- Reloj en vivo -->
+  <script src="clock.js"></script>
 
 </body>
 
