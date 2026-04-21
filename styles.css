@@ -19,21 +19,21 @@
 
   /* Syntax colors — vibrant palette */
   --color-keyword: #7C6AF7;
-  /* morado — keywords */
+  /* purple — keywords */
   --color-string: #FF79C6;
-  /* rosa — strings */
+  /* pink — strings */
   --color-function: #61DAFB;
-  /* azul eléctrico — funciones */
+  /* electric blue — functions */
   --color-type: #50FA7B;
-  /* verde neón — tipos */
+  /* neon green — types */
   --color-comment: #8B8BCC;
-  /* morado suave — comentarios */
+  /* soft purple — comments */
   --color-number: #BD93F9;
-  /* lavanda — números */
+  /* lavender — numbers */
   --color-variable: #FF9AF5;
-  /* rosa claro — variables */
+  /* light pink — variables */
   --color-orange: #FFB86C;
-  /* naranja — atributos */
+  /* orange — attributes */
   --color-accent: #7C6AF7;
   --color-accent-warm: #FF79C6;
   --color-accent-green: #50FA7B;
@@ -70,7 +70,7 @@
 }
 
 /* ============================================================
-   RESET Y BASE
+   RESET & BASE
    ============================================================ */
 *,
 *::before,
@@ -110,7 +110,7 @@ a {
 }
 
 /* ============================================================
-   TIPOGRAFÍA
+   TYPOGRAPHY
    ============================================================ */
 h1,
 h2,
@@ -138,7 +138,10 @@ em {
 }
 
 /* ============================================================
-   HEADER / NAVEGACIÓN — estilo barra de título VS Code
+   HEADER & NAVIGATION — Flexbox
+   display: flex on .header-inner aligns logo and nav.
+   align-items: center vertically centers all header content.
+   justify-content: space-between pushes logo left, nav right.
    ============================================================ */
 .site-header {
   position: sticky;
@@ -345,31 +348,51 @@ em {
 }
 
 /* ============================================================
-   SECCIÓN HERO
+   HERO SECTION
    ============================================================ */
-.hero {
+/* ============================================================
+   HERO SECTION
+   Layout: Flexbox — two columns (content + card)
+   On large screens: constrained width, centered, balanced gap
+   ============================================================ */
+.hero-wrapper {
+  position: relative;
   min-height: 88vh;
+  /* Flexbox wrapper to center the hero row horizontally */
+  display: flex;
+  justify-content: center;
+}
+
+.hero {
+  /* Flexbox: side-by-side layout for content and card */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
-  padding: var(--space-xl) var(--space-md);
-  max-width: 1140px;
-  margin: 0 0 0 5rem;
+  gap: 4rem;
+
+  /* Constrain width so it never stretches edge-to-edge */
+  width: 100%;
+  max-width: 1200px;
+  padding: var(--space-xl) var(--space-lg);
+
+  /* Remove asymmetric margin that caused left drift */
+  margin: 0 auto;
   position: relative;
 }
 
 .hero-content {
-  flex: 1;
-  max-width: 560px;
+  /* Flex item: takes remaining space, capped so card has room */
+  flex: 1 1 480px;
+  max-width: 580px;
   position: relative;
   z-index: 2;
   animation: fadeUp 0.8s ease both;
 }
 
-/* GitHub + Status card — lado derecho del hero */
+/* GitHub + Status card — right side of hero */
 .hero-card {
-  flex: 0 0 360px;
+  /* Flex item: fixed width, never shrinks */
+  flex: 0 0 340px;
   background: #111;
   border: 1px solid #2a2a2a;
   border-radius: 10px;
@@ -778,7 +801,7 @@ em {
 }
 
 /* ============================================================
-   HERO — PÁGINA DE MASCOTAS
+   PETS PAGE HERO
    ============================================================ */
 .pets-hero {
   background: linear-gradient(135deg, #1a3a2a 0%, #0d2018 100%);
@@ -890,10 +913,12 @@ em {
 }
 
 /* ============================================================
-   SECCIONES GENÉRICAS
+   GENERIC SECTIONS
    ============================================================ */
+
+/* Section base — generous padding, semi-transparent bg for particles */
 .section {
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-xl) var(--space-lg);
   background-color: rgba(30, 30, 30, 0.3);
 }
 
@@ -901,8 +926,9 @@ em {
   background-color: rgba(37, 37, 38, 0.3);
 }
 
+/* Centers all section content and limits width on large screens */
 .section-inner {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -926,16 +952,24 @@ em {
 }
 
 /* ============================================================
-   SECCIÓN: SOBRE MÍ
+   SECTION: ABOUT ME
+   ============================================================ */
+/* ============================================================
+   SECTION: ABOUT ME
+   Layout: CSS Grid — two columns (terminal + photo)
+   Centered with max-width so it looks balanced on large screens
    ============================================================ */
 .section-about {
+  /* Grid: two columns, text takes remaining space, image is fixed */
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 380px;
   gap: var(--space-lg);
   align-items: center;
-  padding: var(--space-xl) var(--space-md);
-  margin-left: 60px;
 
+  /* Centered container — no asymmetric margins */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
 }
 
 /* Terminal typewriter — About Me */
@@ -1083,17 +1117,14 @@ em {
   color: var(--color-keyword);
 }
 
+/* About photo wrapper — Flexbox column for fake tag + image */
 .about-img-tag-wrap {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  margin-right: 20px;
+  /* Negative margin removed — grid column handles spacing */
   flex-shrink: 0;
-  margin-right: 100px;
-
-
-
 }
 
 .fake-tag {
@@ -1165,11 +1196,21 @@ em {
 
 
 /* ============================================================
-   SECCIÓN: PROYECTOS — Tarjetas estilo code editor
+   SECTION: PROJECTS — CSS Grid Layout
+   grid-template-columns: repeat(4, 1fr) creates 4 equal columns.
+   gap provides visual separation between project cards.
+   Responsive: reduces to 2 cols at 768px, 1 col at 480px.
+   ============================================================ */
+/* ============================================================
+   SECTION: PROJECTS — CSS Grid Layout
+   grid-template-columns: 4 equal columns on large screens,
+   auto-fills to fewer columns on smaller screens via repeat().
+   gap creates visual separation between cards.
    ============================================================ */
 .projects-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* 4 columns on large screens, auto-fills down to 1 on mobile */
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-md);
 }
@@ -1182,7 +1223,7 @@ em {
   border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
-  /* Perspective para el flip */
+  /* Perspective for the flip animation */
   perspective: 1000px;
   min-height: 360px;
   transition: border-color var(--transition), box-shadow var(--transition);
@@ -1220,7 +1261,7 @@ em {
 .project-flip {
   position: absolute;
   inset: 32px 0 0 0;
-  /* debajo de la barra de título */
+  /* below the title bar */
   transform-style: preserve-3d;
   transition: transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -1229,7 +1270,7 @@ em {
   transform: rotateY(180deg);
 }
 
-/* Cara frontal */
+/* Front face */
 .project-front,
 .project-back {
   position: absolute;
@@ -1247,7 +1288,7 @@ em {
   justify-content: flex-start;
 }
 
-/* Imagen arriba en la cara frontal */
+/* Image on top of the front face */
 .project-preview-img {
   width: 100%;
   height: 56%;
@@ -1258,7 +1299,7 @@ em {
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Placeholder cuando no hay imagen todavía */
+/* Placeholder when no image is available yet */
 .project-preview-placeholder {
   width: 100%;
   height: 56%;
@@ -1283,7 +1324,7 @@ em {
   padding: 20px 20px 20px 56px;
 }
 
-/* Cara trasera */
+/* Back face */
 .project-back {
   background: var(--color-bg-alt);
   transform: rotateY(180deg);
@@ -1315,7 +1356,7 @@ em {
   opacity: 0;
 }
 
-/* Durante el hover: aparece solo en la mitad de la animación del flip */
+/* On hover: aparece solo en la mitad de la animación del flip */
 .project-card:hover .project-number {
   animation: numbers-during-flip 0.22s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
@@ -1368,7 +1409,7 @@ em {
   padding-bottom: 1px;
 }
 
-/* Cara trasera — info del proyecto */
+/* Back face — info del proyecto */
 .project-info {
   display: flex;
   flex-direction: column;
@@ -1427,7 +1468,7 @@ em {
 }
 
 /* ============================================================
-   SECCIÓN: CONTACTO
+   SECTION: CONTACT
    ============================================================ */
 .section-contact {
   background: rgba(37, 37, 38, 0.3) !important;
@@ -1506,7 +1547,7 @@ em {
 }
 
 /* ============================================================
-   SECCIÓN: GALERÍA DE MASCOTAS
+   SECTION: PETS GALLERY
    ============================================================ */
 .pets-grid {
   display: grid;
@@ -1627,7 +1668,7 @@ em {
 }
 
 /* ============================================================
-   SECCIÓN: CURIOSIDADES
+   SECTION: FUN FACTS
    ============================================================ */
 .section-curiosidades {
   background: #130d1f !important;
@@ -1731,7 +1772,7 @@ em {
 }
 
 /* ============================================================
-   ANIMACIONES
+   ANIMATIONS
    ============================================================ */
 @keyframes fadeUp {
   from {
@@ -1757,7 +1798,7 @@ em {
   }
 }
 
-/* Cursor parpadeante después del hero-sub */
+/* Blinking cursor after hero-sub */
 .hero-sub::after {
   content: '|';
   color: var(--color-keyword);
@@ -1766,7 +1807,7 @@ em {
 }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE — 768px and below
    ============================================================ */
 @media (max-width: 768px) {
   :root {
@@ -1774,6 +1815,7 @@ em {
     --space-xl: 4rem;
   }
 
+  /* Header: stack logo and nav vertically */
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -1793,22 +1835,34 @@ em {
     padding: 0 10px;
   }
 
+  /* Hero: stack content and card vertically */
   .hero {
+    flex-direction: column;
+    align-items: flex-start;
     min-height: auto;
     padding-top: var(--space-lg);
+    gap: var(--space-md);
   }
 
   .hero-wrapper {
     min-height: auto;
   }
 
+  .hero-card {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 400px;
+  }
+
   .hero-deco {
     display: none;
   }
 
+  /* About: single column grid */
   .section-about {
     grid-template-columns: 1fr;
     text-align: center;
+    padding: var(--space-xl) var(--space-md);
   }
 
   .about-image-wrap {
@@ -1825,8 +1879,9 @@ em {
     justify-content: center;
   }
 
+  /* Projects: 2 columns on tablet */
   .projects-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer-inner {
@@ -1835,7 +1890,19 @@ em {
   }
 }
 
+/* ============================================================
+   RESPONSIVE — 480px and below
+   ============================================================ */
 @media (max-width: 480px) {
+  .section {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  /* Projects: single column on mobile */
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+
   .pets-grid {
     grid-template-columns: 1fr;
   }
